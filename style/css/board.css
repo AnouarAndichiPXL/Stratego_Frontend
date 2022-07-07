@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+    --boardgame-size: 0;
+}
+body {
+    background: url("../images/Lobby_Background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#grid-boardgame {
+    width: 90%;
+    height: 90vh;
+    /* background-image:url(../images/backgroundStratego.svg); */
+    background-color: rgba(24, 21, 21, 0.9);
+    color: #FFF;
+    display: grid;
+    grid-template: repeat(var(--boardgame-size), 1fr)/repeat(var(--boardgame-size),1fr);
+    border: 6px solid #A67C52;
+    align-content: center;
+    margin: auto;
+}
+.box{
+    outline: 3px solid #A67C52;
+    outline-offset: -1px;
+    font-family: 'Share Tech Mono', monospace;;
+    font-weight: bold;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+.empty{
+    outline: 3px solid #A67C52;
+    outline-offset: -1px;
+    font-family: 'Share Tech Mono', monospace;;
+    font-weight: bold;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blue{
+    background-color: rgba(92, 162, 222, 0.4);
+
+}
+.red{
+    background-color: rgba(227, 98, 98, 0.4);
+}
+.water{
+    background-color: cyan;
+}
+.green{
+    background-color: rgba(98, 227, 171, 0.48);
+}
+
+#grid-boardpieces {
+    width: 250px;
+    height: 400px;
+    /* background-image:url(../images/backgroundStratego.svg); */
+    background-color: rgba(24, 21, 21, 0.9);
+    border: 6px solid #A67C52;
+    display: grid;
+    grid-template: repeat(6, 1fr)/repeat(2, 1fr);
+    float: right;
+    overflow: auto;
+}
+
+.main-game{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.fill{
+    max-width: 80%;
+    cursor:pointer;
+    height: 70px;
+}
+.fillAlt {
+    max-width: 80%;
+    height: 70px;
+}
+
+aside{
+    position: fixed;
+    right: 10px;
+}
+
+#grid-info{
+    width: 250px;
+    height: 30%;
+    background-color: rgba(24, 21, 21, 0.9);
+    border: 6px solid #A67C52;
+    display: grid;
+    /* grid-template: repeat(6, 1fr)/repeat(2, 1fr); */
+    /* align-content: center; */
+    /* float: right; */
+    position: fixed;
+    bottom: 0px;
+    color: white;
+    right: 10px;
+}
+.msg{
+    color: blue;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Share Tech Mono', monospace;
+    text-align: center;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #ff1c60, 0 0 30px #ff1c60, 0 0 40px #ff1c60, 0 0 55px #ff1c60, 0 0 75px #ff1c60, 2px 2px 2px rgba(19,124,206,0);
+}
+#ready{
+    background-color: rgba(238, 76, 76, 0.82);
+    border: #04aa6d 3px solid;
+    width: 100%;
+    padding: 8px;
+    font-weight: bold;
+    color: white;
+}
+#errorsHandel{
+    height: 100px;
+}
+
+#gameinfo{
+    font-size: 13px;
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+#leaveTheGame{
+    background-color: rgba(238, 76, 76, 0.82);
+    border: #04aa6d 3px solid;
+    width: 100%;
+    padding: 8px;
+    font-weight: bold;
+    color: white;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    text-align: center;
+
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #FFFFFF;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+#grid-boardpieces::-webkit-scrollbar {
+    width: 10px;
+}
+
+#grid-boardpieces::-webkit-scrollbar-track {
+    background: rgb(147, 147, 147);
+    border-radius: 10px;
+}
+
+#grid-boardpieces::-webkit-scrollbar-thumb {
+    background: rgb(101, 101, 101);
+    border-radius: 10px;
+}
+
+#grid-boardpieces::-webkit-scrollbar-thumb:hover {
+    background: rgb(68, 68, 68);
+    border-radius: 10px;
+}
+
+#grid-boardpieces::-webkit-scrollbar-thumb:active {
+    background: rgb(40, 40, 40);
+    border-radius: 10px;
+}
+
+#downloadPositions ,#uploadPositions, #randomPositions{
+    padding: 10px 0 10px 0;
+    width: calc(50% - 3px);
+    background-color: rgba(238, 76, 76, 0.82);
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    font-size: 12.5px;
+}
+#randomPositions{
+    width: 100%;
+
+}
+
+
+
+/*.blue, .red, .empty{
+    height: 70px;
+}*/
+
+/* Upload Form PopUp */
+{box-sizing: border-box;}
+
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #9a9a9ab0;
+    z-index: 9;
+    height: 350px;
+}
+
+.form-container{
+    max-width: 300px;
+    padding: 20px;
+    background-color: white;
+}
+
+
+/* Set a style for the submit button */
+.form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+    font-family: 'Share Tech Mono', monospace;
+    border-radius: 30px;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover{
+    opacity: 1;
+}
+
+.form-container h2{
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+
+/*  Styling Upload Input   */
+.file {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+}
+
+.file-input label {
+    display: block;
+    position: relative;
+    width: 250px;
+    height: 50px;
+    border-radius: 25px;
+    background: linear-gradient(40deg, #0085ff, #f57373);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .2s ease-out;
+    font-family: 'Share Tech Mono', monospace;
+    margin-left: -35px;
+}
+
+.file-name {
+    position: absolute;
+    bottom: -35px;
+    left: 10px;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+input:hover + label,
+input:focus + label {
+    transform: scale(1.02);
+}
+
+/* Adding an outline to the label on focus */
+input:focus + label {
+    outline: 1px solid #000;
+    outline: -webkit-focus-ring-color auto 2px;
+}
+
+/* Css file input  */
+.custom-file{
+    font-family: 'Share Tech Mono', monospace;
+    margin: 20px 0px 30px 0px;
+}
+.file-input{
+    margin: 20px;
+    padding: 40px;
+}

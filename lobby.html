@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Waiting Room</title>
+    <script src="script/authorization.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style/css/lobby.css">
+    <script src="script/lobby.js"></script>
+</head>
+<body>
+
+<!-- Modal content -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span id="CloseBtn" class="close">&times;</span>
+            <h2 style="text-align: center" id="modalHeader">Information About Stratego</h2>
+        </div>
+        <div class="modal-body">
+            <br>
+            <p>
+                Stratego is a game where skillful planning, clever deception and good memory work are used to defeat
+                your opponent.
+                Every time you play the battle is different. And now, new Tournament Rules can give you more variety
+                than ever.
+            </p> <br> <br>
+            <h2 style="color: #ff0000;">Components :</h2>
+            <p>Each army consists of:</p>
+            <p>Moveable pieces:</p>
+            <br>
+            <table width="500">
+                <tbody>
+                <tr align="center">
+                    <td><img title="Marshal of Stratego" src="https://www.ultraboardgames.com/stratego/gfx/b10.png"
+                             alt="Marshal of Stratego"/><br/>1 Marshal<br/><br/></td>
+                    <td><img title="General of Stratego" src="https://www.ultraboardgames.com/stratego/gfx/b9.png"
+                             alt="General of Stratego"/><br/>1 General<br/><br/></td>
+                    <td><img title="Colonel of Stratego" src="https://www.ultraboardgames.com/stratego/gfx/b8.png"
+                             alt="Colonel of Stratego"/><br/>2 Colonels<br/><br/></td>
+                    <td><img title="Major of Stratego" src="https://www.ultraboardgames.com/stratego/gfx/b7.png"
+                             alt="Major of Stratego"/><br/>3 Majors<br/><br/></td>
+                    <td><img title="Captain of Stratego" src="https://www.ultraboardgames.com/stratego/gfx/b6.png"
+                             alt="Captain of Stratego"/><br/>4 Captains<br/><br/></td>
+                </tr>
+                <tr align="center">
+                    <td><img title="Lieutenant of Stratego" src="https://www.ultraboardgames.com/stratego/gfx/b5.png"
+                             alt="Lieutenant of Stratego"/><br/>4 Lieutenants
+                    </td>
+                    <td><img title="Sergeant of Stratego" src="https://www.ultraboardgames.com/stratego/gfx/b4.png"
+                             alt="Sergeant of Stratego"/><br/>5 Sergeants
+                    </td>
+                    <td><img title="Miner of Stratego" src="https://www.ultraboardgames.com/stratego/gfx/b3.png"
+                             alt="Miner of Stratego"/><br/>5 Miners
+                    </td>
+                    <td><img title="Scout of Stratego" src="https://www.ultraboardgames.com/stratego/gfx/b2.png"
+                             alt="Scout of Stratego"/><br/>6 Scouts
+                    </td>
+                    <td><img title="Spy of Stratego" src="https://www.ultraboardgames.com/stratego/gfx/b1.png"
+                             alt="Spy of Stratego"/><br/>1 Spy
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <br><br>
+            <p>Non-moveable pieces:</p>
+            <table width="200">
+                <tbody>
+                <tr align="center">
+                    <td><img title="Bomb of Stratego" src="https://www.ultraboardgames.com/stratego/gfx/b11.png"
+                             alt="Bomb of Stratego"/><br/>6 Bombs
+                    </td>
+                    <td><img title="Flag of Stratego" src="https://www.ultraboardgames.com/stratego/gfx/b12.png"
+                             alt="Flag of Stratego"/><br/>1 Flag
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <br> <br>
+            <h2><span style="color: #ff0000;">Object of the Game:</span></h2>
+            <p>The object of the game is to capture your opponent's flag.</p>
+            <br>
+            <h2><span style="color: #ff0000;">Game Play:</span></h2>
+            <p>You and your opponent alternate turns. The red player moves first.</p>
+            <br>
+            <p>On your turn you can do one of the following:</p>
+            <br>
+            <p><strong>=> Move&nbsp;</strong>- one of your playing pieces to an open adjacent space</p>
+            <p><strong>=> Attack&nbsp;</strong>- one of your opponent's playing pieces.</p>
+            <br>
+            <h2><span style="color: #ff0000;">End of the Game:</span></h2>
+            <p>The first player to attack an opponent's Flag captures it and wins the game.</p>
+            <p>If all of your moveable pieces have been removed and you cannot move or attack on a turn, you must give
+                up and declare your opponent the winner.</p>
+            <br>
+            <br>
+
+        </div>
+        <div class="modal-footer">
+            <h2 style="text-align: center" id="modalFooter">Enjoy one of the most strategy games in our website.</h2>
+        </div>
+    </div>
+</div>
+
+
+<div id="FriendsModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span id="CloseBtnFriend" class="close">&times;</span>
+            <h2 style="text-align: center" id="FriendsHeader">Play or Add Friends</h2>
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            <p id="ownId" style="float: left">Your Id = </p><br><br>
+            <input type="text" name="FriendId" id="FriendIdInput">
+            <input type="submit" value="Add Friend" name="sendFriendRequest" id="sendFriendRequest">
+            <h3 id="msgFriend"></h3>
+        </div>
+        <div id="Challenges">
+
+        </div>
+        <div id="FriendsRequest">
+
+        </div>
+        <div class="modal-footer">
+            <h2 style="text-align: center" id="FriendsFooter">Start a game with your friend and enjoy the moment!</h2>
+        </div>
+    </div>
+</div>
+
+
+<div id="Logo" class="Logo">
+    <img src="style/images/Lobby.png" alt="Logo">
+</div>
+
+<div class="wrapper">
+    <input class='start-btn' type="submit" value="Quick Game" name="CreateGame" id="quickGame"><br>
+    <input class='start-btn' type="submit" value="Normal Game" name="NormalGame" id="normalGame"><br>
+    <input class='start-btn' type="submit" name="goWithFriend" value="Play with Friend" id="playWithFriend"><br>
+    <input class='start-btn' type="submit" value="Information" name="info" id="info"><br>
+    <input class='start-btn' type="submit" id="logout" name="logout" value="Logout"><br>
+</div>
+<!-- Challenge Form PopUp -->
+<div class="form-popup" id="myForm">
+    <div class="form-container">
+        <span id="CloseBtnChallenge" class="close" style="color: red">X</span>
+        <h2>Choose your game!</h2>
+        <button id="challengeQuickGame" type="submit" class="btn"> Start Quick Game</button>
+        <br> <h3 style="text-align: center">OR</h3> <br>
+        <button id="challengeNormalGame" type="submit" class="btn" >Start Normal Game</button>
+    </div>
+</div>
+<div id="alert">
+    LOOKING FOR A QUICK GAME!.
+</div>
+</body>
+</html>

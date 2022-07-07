@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+body {
+    background: url("../images/Lobby_Background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.wrapper, .Logo {
+    text-align: center;
+}
+
+.start-btn {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 35px;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 30px;
+    font-weight: bold;
+    padding: 10px 20px 10px 20px;
+    background-color: lightgray;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: gray;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+    box-shadow: 0 .2em gray;
+    cursor: pointer;
+}
+.start-btn:hover {
+    color: rgba(75, 134, 206, 0.84);
+}
+
+.start-btn:active {
+    box-shadow: none;
+    position: relative;
+    top: .2em;
+}
+
+#FriendIdInput {
+    font-size: 25px;
+    width: 90%;
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px 5px 10px 10px;
+    background-color: lightgray;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: gray;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#sendFriendRequest, #acceptFriendRequest {
+    font-size: 25px;
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px 5px 10px 10px;
+    background-color: lightgray;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: gray;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0px 20px 20px 0px;
+
+}
+
+/* The alert message box */
+#alert {
+    display: none;
+    position: fixed;
+    padding: 20px;
+    background-color: #04aa6d; /* Red */
+    color: white;
+    bottom: 0;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #FFFFFF;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+    padding: 20px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 20px;
+}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 20px;
+    background-color: #5cb85c;
+    color: white;
+
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Friends popUp "Modal" */
+table {
+    width: 100%;
+    border-spacing: 0px;
+    padding: 20px;
+}
+
+th {
+    padding: 10px;
+    background-color: cornflowerblue;
+    text-align: left;
+    border: black solid 2px;
+}
+
+td {
+    border: 2px solid black;
+    border-spacing: 0px;
+    padding: 10px;
+    text-align: left;
+}
+
+#FriendId {
+
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .Logo img {
+        width: 90%;
+    }
+
+    .start-btn {
+        font-size: 20px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 1000px) {
+    .Logo img {
+        width: 90%;
+    }
+
+    .start-btn {
+        font-size: 30px;
+    }
+}
+
+/* Extra large devices (large
+  laptops and desktops,
+  1200px and up) */
+@media only screen and (max-width: 1200px) {
+    .start-btn {
+        font-size: 35px;
+    }
+}
+
+
+/* Upload Form PopUp */
+{
+    box-sizing: border-box
+;
+}
+
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #9a9a9ab0;
+    z-index: 9;
+}
+
+.form-container {
+    max-width: 300px;
+    padding: 20px;
+    background-color: white;
+}
+
+
+/* Set a style for the submit button */
+.form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    font-family: 'Share Tech Mono', monospace;
+    border-radius: 30px;
+}
+
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover {
+    opacity: 1;
+}
+
+.form-container h2 {
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    margin-bottom: 20px;
+}
+
+.Challenge, .removeFriend, .AcceptChallenge, .AcceptFriend {
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    background-color: rgba(136, 136, 136, 0.75);
+    border-radius: 10px;
+}
+
+.Challenge:hover, .removeFriend:hover, .AcceptChallenge:hover, .AcceptFriend:hover {
+    background-color: rgba(187, 187, 187, 0.75);
+}

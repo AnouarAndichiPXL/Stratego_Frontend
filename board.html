@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="script/authorization.js"></script>
+    <meta charset="UTF-8">
+    <title>Statego 1TINA [Army01] Board</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/css/board.css">
+    <script type="text/javascript" src="./script/board.js"></script>
+
+</head>
+<body>
+<!-- The Winner Modal -->
+<!-- Modal content -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2 id="modalHeader"></h2>
+        </div>
+        <div class="modal-body">
+            <p id="msgWinner"></p>
+        </div>
+        <div class="modal-footer">
+            <h3 id="modalFooter"></h3>
+        </div>
+    </div>
+</div>
+
+<!-- Upload Form PopUp -->
+<div class="form-popup" id="myForm">
+    <div class="form-container">
+        <h2>Upload Positions</h2>
+        <div class="file-input">
+            <input type="file" id="file" class="file">
+            <label for="file">
+                Select file
+                <p class="file-name"></p>
+            </label>
+        </div>
+
+        <button id="fileUpload" type="submit" class="btn">Upload</button>
+        <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+    </div>
+</div>
+
+<div class="main-game">
+    <main>
+        <div id="grid-boardgame"></div>
+    </main>
+    <aside id="rightSide">
+        <div class="readyDiv">
+            <input type="submit" value="Ready" name="ready" id="ready">
+        </div>
+
+        <div id="grid-boardpieces"></div>
+        <div id="armyPositions">
+            <input type="submit" value="Download Positions" name="downloadPositions" id="downloadPositions">
+            <input type="submit" value="Upload Positions" name="uploadPositions" id="uploadPositions"> <br>
+            <input type="submit" value="Random" name="random" id="randomPositions">
+        </div>
+    </aside>
+
+
+    <div id="grid-info">
+        <div class="leaveTheGame">
+            <input value="Leave Game" type="submit" name="leaveTheGame" id="leaveTheGame">
+        </div>
+        <div id="playerTurn"></div>
+        <div id="errorsHandel"></div>
+        <div id="gameinfo"></div>
+    </div>
+</div>
+
+<audio id="Start"><source src ="./style/Start.mp3" type="audio/mp3"></audio>
+<audio id="Kill"><source src ="./style/Kill_Him.mp3" type="audio/mp3"></audio>
+<audio id="Winner"><source src ="./style/Winner.mp3" type="audio/mp3"></audio>
+<audio id="Loser"><source src ="./style/Loser.mp3" type="audio/mp3"></audio>
+
+<script>
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+
+    let file = document.querySelector('#file');
+    file.addEventListener('change', (e) => {
+        // Get the selected file
+        let [file] = e.target.files;
+        // Get the file name and size
+        let {name: fileName, size} = file;
+        // Convert size in bytes to kilo bytes
+        let fileSize = (size / 1000).toFixed(2);
+        // Set the text content
+        let fileNameAndSize = `${fileName} - ${fileSize}KB`;
+        document.querySelector('.file-name').textContent = fileNameAndSize;
+    });
+
+</script>
+
+</body>
+</html>
